@@ -1,4 +1,5 @@
 import React from 'react';
+import renderer from 'react-test-renderer';
 import { shallow, mount, render } from 'enzyme';
 
 import App from '../../../components/App/App';
@@ -22,5 +23,10 @@ describe('App', () => {
   it('should render to static HTML', function () {
     const wrapper = render(<App />)
     expect(wrapper.find('li').text()).toEqual('Patelnia, cena: 89,99zł');
+  });
+
+  it('should render correctly', function () {
+    const tree = renderer.create(<App />).toJSON()
+    expect(tree).toMatchSnapshot();
   });
 });
