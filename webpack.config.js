@@ -11,6 +11,7 @@ module.exports = {
     modules: [path.join(__dirname, 'src'), 'node_modules'],
     alias: {
       react: path.join(__dirname, 'node_modules', 'react'),
+      '@': path.resolve(__dirname, 'src/')
     },
   },
   module: {

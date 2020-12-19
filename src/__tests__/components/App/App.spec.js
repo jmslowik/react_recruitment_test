@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow, mount, render } from 'enzyme';
 
-import App from '../../../components/App/App';
+import App from '@/components/App/App';
 
 describe('App', () => {
   it('should render without throwing an error', function () {
