@@ -2,26 +2,38 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllAction } from '@/store/products/saga';
 import { productsListSelector } from '@/store/products/selectors';
-
-import './App.css';
+import List from '@/components/ProductsList/List';
+import Item from '@/components/ProductsList/Item';
 
 const App = () => {
   const dispatch = useDispatch();
   const products = useSelector(productsListSelector);
 
+  const priceParse = (price) => {
+    switch (typeof price) {
+      case 'string':
+        return parseFloat(price);
+      case 'number':
+        return price;
+      default:
+        return NaN;
+    }
+  };
+
   useEffect(() => {
     dispatch(getAllAction());
   }, [dispatch]);
 
-  console.log(products);
-
   return (
-    <div className="container">
-      <h3>Lista produktów</h3>
-      <ul>
-        <li className="row">Patelnia, cena: 89,99zł</li>
-      </ul>
-    </div>
+    <List>
+      { products && products.map(({ pid, name, price }) => (
+        <Item
+          key={pid}
+          name={name}
+          price={priceParse(price)}
+        />
+      ))}
+    </List>
   );
 };
 
