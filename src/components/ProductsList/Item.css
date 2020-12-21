@@ -2,4 +2,18 @@
   padding: 10px;
   border-bottom: 1px solid silver;
   list-style: none;
+  display: flex;
+}
+
+.after {
+  margin-left: auto;
+}
+
+.price {
+  margin-left: auto;
+}
+
+.item {
+  width: 60%;
+  display: flex;
 }
