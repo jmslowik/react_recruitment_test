@@ -1,7 +1,9 @@
 import React from 'react';
 import './Item.css';
 
-const Item = ({ name, price, after }) => (
+const Item = ({
+  name, price, after,
+}) => (
   <li className="row">
     <div className="item">
       {`${name}:`}
