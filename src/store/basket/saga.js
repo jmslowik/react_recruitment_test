@@ -21,7 +21,7 @@ export const setAndVerifyProductQuantityDebounceAction = ({ pid, quantity, min }
   payload: { pid, quantity, min },
 });
 
-function* setAndVerifyProductQuantity({ payload }) {
+export function* setAndVerifyProductQuantity({ payload }) {
   try {
     const { pid, quantity, min } = payload;
     const { data } = yield call(api.products.verifyQuantity, pid, quantity);
@@ -32,11 +32,11 @@ function* setAndVerifyProductQuantity({ payload }) {
   }
 }
 
-function* watchSetAndVerifyProductQuantity() {
+export function* watchSetAndVerifyProductQuantity() {
   yield takeEvery(types.SET_AND_VERIFY_PRODUCT_QUANTITY, setAndVerifyProductQuantity);
 }
 
-function* setAndVerifyProductQuantityDebounce() {
+export function* setAndVerifyProductQuantityDebounce() {
   yield debounce(
     SET_AND_VERIFY_PRODUCT_QUANTITY_DEBOUNCE_MS,
     types.SET_AND_VERIFY_PRODUCT_QUANTITY_DEBOUNCE,

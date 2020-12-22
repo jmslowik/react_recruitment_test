@@ -13,7 +13,7 @@ export const getAllAction = () => ({
   payload: {},
 });
 
-function* getAll() {
+export function* getAll() {
   try {
     const res = yield call(api.products.getAll);
     yield put(replaceProductsListAction(res.data));
@@ -22,7 +22,7 @@ function* getAll() {
   }
 }
 
-function* watchGetAll() {
+export function* watchGetAll() {
   yield takeEvery(types.GET_ALL, getAll);
 }
 

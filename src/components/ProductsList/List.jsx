@@ -1,7 +1,9 @@
 import React from 'react';
 import './List.css';
 
-const ProductsList = ({ children, sum }) => (
+// TODO name as prop
+
+const List = ({ children, sum }) => (
   <div className="container">
     <h3>Lista produktów</h3>
     <ul className="list">
@@ -13,4 +15,4 @@ const ProductsList = ({ children, sum }) => (
   </div>
 );
 
-export default ProductsList;
+export default List;

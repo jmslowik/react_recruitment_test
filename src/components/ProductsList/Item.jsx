@@ -1,8 +1,10 @@
 import React from 'react';
 import './Item.css';
 
+// TODO locale and currency as prop
+
 const Item = ({
-  name, price, after,
+  name, price = 0, after,
 }) => (
   <li className="row">
     <div className="item">

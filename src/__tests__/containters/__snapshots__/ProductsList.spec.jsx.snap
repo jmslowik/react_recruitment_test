@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductsList container should render with given state from Redux store 1`] = `
+<div
+  className="container"
+>
+  <h3>
+    Lista produktów
+  </h3>
+  <ul
+    className="list"
+  >
+    <li
+      className="row"
+    >
+      <div
+        className="item"
+      >
+        name 1:
+        <span
+          className="price"
+        >
+          1,00 zł
+        </span>
+      </div>
+      <div
+        className="after"
+      >
+        <div
+          className="quantity-controller"
+        >
+          <div
+            className="quantity-text"
+          >
+            Obecnie masz
+             
+            <span
+              className="quantity"
+            >
+              1
+            </span>
+             
+            sztuk produktu
+          </div>
+          <button
+            disabled={true}
+            onClick={[Function]}
+            type="button"
+          >
+            -
+          </button>
+          <button
+            disabled={true}
+            onClick={[Function]}
+            type="button"
+          >
+            +
+          </button>
+        </div>
+      </div>
+    </li>
+    <li
+      className="row"
+    >
+      <div
+        className="item"
+      >
+        name 2:
+        <span
+          className="price"
+        >
+          2,00 zł
+        </span>
+      </div>
+      <div
+        className="after"
+      >
+        <div
+          className="quantity-controller"
+        >
+          <div
+            className="quantity-text"
+          >
+            Obecnie masz
+             
+            <span
+              className="quantity"
+            >
+              2
+            </span>
+             
+            sztuk produktu
+          </div>
+          <button
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            -
+          </button>
+          <button
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            +
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <ul
+    className="sum"
+  >
+    <li
+      className="row"
+    >
+      <div
+        className="item"
+      >
+        Suma:
+        <span
+          className="price"
+        >
+          5,00 zł
+        </span>
+      </div>
+      <div
+        className="after"
+      >
+        <div>
+          Obecnie masz 3 przedmiotów w koszyku
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
