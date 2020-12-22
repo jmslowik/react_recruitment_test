@@ -14,8 +14,9 @@ describe('List', () => {
   });
 
   it('should contain list name', () => {
-    const wrapper = shallow(<List />);
-    expect(wrapper.contains(<h3>Lista produktów</h3>)).toBeTruthy();
+    const name = 'Lista produktów';
+    const wrapper = shallow(<List name={name} />);
+    expect(wrapper.contains(<h3>{name}</h3>)).toBeTruthy();
   });
 
   it('should contain children under the .list', () => {
@@ -35,7 +36,7 @@ describe('List', () => {
 
   it('should render correctly', () => {
     const tree = renderer.create(
-      <List sum={<Sum />}>
+      <List name="Lista produktów" sum={<Sum />}>
         <Child />
         <Child />
       </List>,

@@ -1,4 +1,4 @@
-import { takeEvery, call, put } from 'redux-saga/effects';
+import { takeEvery, call } from 'redux-saga/effects';
 import { runSaga } from 'redux-saga';
 import { getAll, watchGetAll } from '@/store/products/saga';
 import api from '@/api';

@@ -17,7 +17,7 @@ const ProductsList = ({ list, quantities, onChange }) => {
   );
 
   return (
-    <List sum={<Sum />}>
+    <List name="Lista produktów" sum={<Sum />}>
       { list && list.map(({
         pid, name, price, min, max, isBlocked,
       }) => (

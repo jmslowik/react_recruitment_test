@@ -3,9 +3,9 @@ import './List.css';
 
 // TODO name as prop
 
-const List = ({ children, sum }) => (
+const List = ({ children, sum, name }) => (
   <div className="container">
-    <h3>Lista produktów</h3>
+    <h3>{name}</h3>
     <ul className="list">
       { children }
     </ul>
