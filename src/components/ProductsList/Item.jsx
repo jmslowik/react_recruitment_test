@@ -1,21 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import LocaleContext from '@/contexts/LocaleContext';
 import './Item.css';
-
-// TODO locale and currency as prop
 
 const Item = ({
   name, price = 0, after,
-}) => (
-  <li className="row">
-    <div className="item">
-      {`${name}:`}
-      <span className="price">
-        {price.toLocaleString('pl-PL', { style: 'currency', currency: 'PLN' })}
-      </span>
+}) => {
+  const { locale, currency } = useContext(LocaleContext);
 
-    </div>
-    <div className="after">{after}</div>
-  </li>
-);
+  return (
+    <li className="row">
+      <div className="item">
+        {`${name}:`}
+        <span className="price">
+          {price.toLocaleString(locale, { style: 'currency', currency })}
+        </span>
+
+      </div>
+      <div className="after">{after}</div>
+    </li>
+  );
+};
 
 export default Item;
