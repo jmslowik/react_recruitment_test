@@ -11,6 +11,7 @@ import ProductsListComponent from '@/components/ProductsList';
 
 const ProductsList = () => {
   const dispatch = useDispatch();
+
   const products = useSelector(productsListSelector);
   const basket = useSelector(basketSelector);
 
