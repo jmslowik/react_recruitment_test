@@ -8,3 +8,12 @@
 .quantity {
   font-weight: bold;
 }
+
+.spinner {
+  position: absolute;
+  right: 30px;
+}
+
+.spinner span {
+  font-size: 19px !important;
+}

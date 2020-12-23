@@ -1,4 +1,6 @@
 import React from 'react';
+import { Button } from 'antd';
+import Spinner from './spinner';
 import './index.css';
 
 const QuantityText = ({ value, className }) => (
@@ -12,7 +14,7 @@ const QuantityText = ({ value, className }) => (
 );
 
 const QuantityController = ({
-  quantity, min = NaN, max = NaN, isBlocked = false, onChange,
+  quantity, min = NaN, max = NaN, isBlocked = false, onChange, isLoading,
 }) => {
   const isQuantityMin = quantity === 0 || (min >= 0 && quantity <= min);
   const isQuantityMax = max >= 0 && quantity >= max;
@@ -32,20 +34,23 @@ const QuantityController = ({
   return (
     <div className="quantity-controller">
       <QuantityText className="quantity-text" value={quantity} />
-      <button
-        type="button"
+      <Button
+        type="primary"
+        size="small"
         onClick={onSubtract}
         disabled={isBlocked || isQuantityMin}
       >
         -
-      </button>
-      <button
-        type="button"
+      </Button>
+      <Button
+        type="primary"
+        size="small"
         onClick={onAdd}
         disabled={isBlocked || isQuantityMax}
       >
         +
-      </button>
+      </Button>
+      {isLoading && <Spinner className="spinner" />}
     </div>
   );
 };
