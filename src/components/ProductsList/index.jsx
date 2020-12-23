@@ -21,7 +21,6 @@ const ProductsList = ({ list, quantities, onChange }) => {
       { list && list.map(({
         pid, name, price, min, max, isBlocked,
       }) => (
-        quantities[pid] && (
         <Item
           key={pid}
           name={name}
@@ -36,7 +35,6 @@ const ProductsList = ({ list, quantities, onChange }) => {
             />
           )}
         />
-        )
       ))}
     </List>
   );
