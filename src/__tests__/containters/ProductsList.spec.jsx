@@ -53,13 +53,11 @@ describe('ProductsList container', () => {
     expect(store.dispatch.mock.calls.filter(callsFilter)).toHaveLength(1);
   });
 
-  it('should dispatch [BASKET] SET_AND_VERIFY_PRODUCT_QUANTITY on mount number of product times', () => {
+  it('should dispatch [BASKET] INIT_PRODUCT_QUANTITIES on mount', () => {
     mountComponent();
-    const type = '[BASKET] SET_AND_VERIFY_PRODUCT_QUANTITY';
-    const callsFilter = dispatchCallsByTypeFilter(type);
+    const type = '[BASKET] INIT_PRODUCT_QUANTITIES';
 
     expect(store.dispatch).toHaveBeenCalled();
     expect(store.dispatch).toHaveBeenNthCalledWith(2, { type, payload: expect.anything() });
-    expect(store.dispatch.mock.calls.filter(callsFilter)).toHaveLength(2);
   });
 });

@@ -11,8 +11,8 @@ export const parsePrice = (price) => {
 };
 
 export const getSum = (products, quantities) => (products && quantities
-  ? products.reduce((sum, { price, pid, min }) => {
-    const { quantity = min || 0 } = quantities[pid] || {};
+  ? products.reduce((sum, { price, pid }) => {
+    const { quantity = 0 } = quantities[pid] || {};
     return sum + (parsePrice(price) * quantity);
   }, 0)
   : 0);

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllAction } from '@/store/products/saga';
+import { initProductQuantitiesAction } from '@/store/basket/actions';
 import {
   setAndVerifyProductQuantityAction,
   setAndVerifyProductQuantityDebounceAction,
@@ -21,13 +22,13 @@ const ProductsList = () => {
 
   useEffect(() => {
     dispatch(getAllAction());
-  }, [dispatch]);
+  }, []);
 
   useEffect(() => {
-    products.forEach(({ pid, min }) => {
-      dispatch(setAndVerifyProductQuantityAction({ pid, quantity: min, min }));
-    });
-  }, [products, dispatch]);
+    if (products && products.length) {
+      dispatch(initProductQuantitiesAction(products));
+    }
+  }, [products]);
 
   return (
     <ProductsListComponent
