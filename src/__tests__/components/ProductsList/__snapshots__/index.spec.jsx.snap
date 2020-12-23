@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductsList should render correctly 1`] = `
+<div
+  className="container"
+>
+  <h3>
+    Lista produktów
+  </h3>
+  <ul
+    className="list"
+  />
+  <ul
+    className="sum"
+  >
+    <li
+      className="row"
+    >
+      <div
+        className="item"
+      >
+        Suma:
+        <span
+          className="price"
+        >
+          0,00 zł
+        </span>
+      </div>
+      <div
+        className="after"
+      >
+        <div>
+          Obecnie masz 0 przedmiotów w koszyku
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;

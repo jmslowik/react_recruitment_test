@@ -1,0 +1,10 @@
+.quantity-controller {
+  display: flex;
+}
+.quantity-text {
+  padding-right: 5px;
+}
+
+.quantity {
+  font-weight: bold;
+}

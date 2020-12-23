@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item should render correctly 1`] = `
+<li
+  className="row"
+>
+  <div
+    className="item"
+  >
+    name:
+    <span
+      className="price"
+    >
+      11,10 zł
+    </span>
+  </div>
+  <div
+    className="after"
+  >
+    <div
+      className="after-prop"
+    >
+      after
+    </div>
+  </div>
+</li>
+`;
